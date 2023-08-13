@@ -19,10 +19,25 @@ connection.connect(err => {
   if (err) {
     console.error('🚨 Erro ao conectar ao banco de dados:', err);
   } else {
+    createTableIfNotExists()
     console.log('Conexão bem-sucedida ao banco de dados 🐬');
   }
 });
 
+async function createTableIfNotExists() {
+  const createTableQuery = `
+    CREATE TABLE IF NOT EXISTS peoples (
+      id INT PRIMARY KEY AUTO_INCREMENT,
+      name VARCHAR(50)
+    );`;
+  
+  try {
+    connection.query(createTableQuery);
+    console.log('Tabela criada ou já existe');
+  } catch (error) {
+    console.error('Erro ao criar a tabela:', error);
+  } 
+}
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.engine('handlebars', engine());
