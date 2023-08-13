@@ -17,7 +17,7 @@ Usando docker-compose:
   docker-compose up -d
 ```
 
-Depois e so abrir localmente no navegador o localhost:8080
+Depois e so abrir localmente no navegador o [localhost:8080](http://localhost:8080)
 
 ![Preview do app](./preview.png)
 
