@@ -1,0 +1,27 @@
+<main class="flex flex-col gap-8 max-w-lg w-full">
+  <h1 class="text-3xl font-bold uppercase">Full Cycle Rocks!</h1>
+  <form class="flex gap-4" action="/submit" method="post">
+    <input
+      type="text"
+      name="personName"
+      placeholder="Digite um nome pra cadastrar uma pessoa"
+      class="grow text-sm rounded bg-zinc-50 px-4 py-1.5 font-medium text-zinc-900"
+    />
+    <button
+      type="submit"
+      class="text-sm rounded bg-zinc-50 px-4 py-1.5 font-medium text-zinc-900 hover:bg-zinc-200"
+    >Adicionar</button>
+  </form>
+
+  <div>
+    {{#if peoples}}
+     <ul class="flex flex-col gap-4 border rounded border-zinc-800 p-2">
+        {{#each peoples}}
+          <li class="rounded font-mono even:bg-zinc-900 p-2">{{this.name}}</li>
+        {{/each}}
+      </ul>
+    {{else}}
+      <p>Nenhuma pessoa cadastrada!</p>
+    {{/if}}
+  </div>
+</main>
