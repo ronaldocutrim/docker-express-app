@@ -9,6 +9,8 @@ services:
       context: ./
       dockerfile: Dockerfile.prod
     image: ronaldocutrim/people-app:prod
+    volumes:
+      - .:/app/
     container_name: node
     networks:
       - nodenet

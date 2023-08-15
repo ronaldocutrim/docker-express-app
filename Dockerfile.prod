@@ -3,8 +3,7 @@ FROM node
 WORKDIR /app
 
 COPY ./package.json .
-COPY ./src .
 
 RUN npm install
 
-ENTRYPOINT [ "node", "main.js" ]
+ENTRYPOINT [ "npx", "nodemon", "./src/main.js", "--ext handlebars" ]
