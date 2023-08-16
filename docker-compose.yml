@@ -10,10 +10,11 @@ services:
       dockerfile: Dockerfile.prod
     image: ronaldocutrim/people-app:prod
     volumes:
-      - .:/app/
+      - ./src:/app/src
     container_name: node
     networks:
       - nodenet
+
   db:
     image: mysql
     container_name: db

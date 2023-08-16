@@ -57,6 +57,7 @@ app.post('/submit', (req, res) => {
   });
 });
 
+
 app.get('/', (request, response) => {
   connection.query('SELECT * FROM peoples', (err, results) => {
     if (err) {
